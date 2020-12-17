@@ -3,67 +3,36 @@
 #include <iomanip>
 #include <cassert>
 #include <map>
+#include <cstring>
 
 // Includes do projeto
-#include "pessoa.hpp"
 #include "funcionario.hpp"
+#include "veterinario.hpp"
 
+using std::cin;
 using std::cout;
 using std::endl;
 
-#ifndef DEBUG
-#define Debug(x) std::cout << x
-#else
-#define Debug(x)
-#endif
-
-//--------------------------------------------- Chamada das Variáveis
-Funcionario::Funcionario(string codigo,
-                         Cargo funcao,
-                         string nome,
-                         string cpf,
-                         string telefone,
-                         string email) : codigo(codigo),
-                                         funcao(funcao),
-                                         nome(nome),
-                                         cpf(cpf),
-                                         telefone(telefone),
-                                         email(email)
+std::ostream &operator<<(std::ostream &out, const Cargo value)
 {
-    ativo++;
-
-    cout << "\n------------------Funcionario Inserido------------------" << endl;
-    cout << "Codigo: " << getCodigo() << " - "
-         << "Cargo: " << getFuncao() << endl;
-    cout << "Nome: " << getNome() << " - "
-         << "CPF: " << getCpf() << endl;
-    cout << "Telefone: " << getTelefone() << " - "
-         << "E-Mail: " << getEmail() << endl;
-
-    Debug(this->codigo << " foi criado.[" << this << "]" << endl);
+    static std::map<Cargo, string> nomeCargo;
+    if (nomeCargo.size() == 0)
+    {
+#define INSERT(p) nomeCargo[p] = #p
+        INSERT(tratador);
+        INSERT(veterinario);
+#undef INSERT
+    }
+    return out << nomeCargo[value];
 }
 
-Funcionario::Funcionario(const Funcionario &copia)
-{
-    this->codigo = copia.codigo;
-    this->funcao = copia.funcao;
-    this->nome = copia.nome;
-    this->cpf = copia.cpf;
-    this->telefone = copia.telefone;
-    this->email = copia.email;
-    ativo++;
-
-    Debug(this->codigo << "Foi criado uma copia.[" << this << "]" << endl);
-}
+//--------------------------------------------- Módulo de inserção
+Funcionario::Funcionario(string codigo, Cargo funcao, string nome,
+                         string cpf, string telefone, string email) : codigo(codigo), funcao(funcao), nome(nome),
+                                                                      cpf(cpf), telefone(telefone), email(email){}
 
 //--------------------------------------------- Chamada do Destrutor
-Funcionario::~Funcionario()
-{
-    ativo--;
-    cout << "Funcionario " << this->codigo << " excluido." << endl;
-
-    Debug(this->codigo << "Foi removido da memória.[" << this << "]" << endl);
-}
+Funcionario::~Funcionario() {}
 
 //--------------------------------------------- Chamada dos Getters
 string
@@ -132,14 +101,40 @@ void Funcionario::setEmail(string email)
     this->email = email;
 }
 
+//--------------------------------------------- Módulo das Interfaces
+void Funcionario::cadastrarFuncionario() {}
+
+void Funcionario::listarFuncionario()
+{
+    cout << "-------------------Listando os Funcionarios------------------\n";
+}
+
+int Funcionario::getAtivos()
+{
+    return ativos;
+}
+
+
+
+
+//--------------------------------------------- Conversor para Enums
+/*std::ostream &operator<<(std::ostream &out, const Cargo value)
+{
+    static std::map<Cargo, string> nomeCargo;
+    if (nomeCargo.size() == 0)
+    {
+#define INSERT(p) nomeCargo[p] = #p
+        INSERT(tratador);
+        INSERT(veterinario);
+#undef INSERT
+    }
+    return out << nomeCargo[value];
+}
+
+
 std::ostream& operator<< (std::ostream &o, Funcionario const f){
     o << f.nome << " - " << std::fixed << std::setprecision(2) << f.cpf << " - " << f.funcao;
     return o;
-}
-
-int
-Funcionario::getAtivo(){
-    return ativo;
 }
 
 bool
@@ -147,18 +142,14 @@ Funcionario::operator==(const Funcionario& outro) const{
     return this-> nome == outro.getNome();
 }
 
-//--------------------------------------------- Conversor para Enums
-std::ostream &operator<<(std::ostream &out, const Cargo value)
+Funcionario::Funcionario(const Funcionario &copia)
 {
-    static std::map <Cargo, string> strings;
-    if (strings.size() == 0)
-    {
-#define INSERT(p) strings[p] = #p
-        INSERT(recepcionista);
-        INSERT(limpeza);
-        INSERT(motorista);
-        INSERT(veterinario);
-#undef INSERT
-    }
-    return out << strings[value];
-}
+    this->codigo = copia.codigo;
+    this->funcao = copia.funcao;
+    this->nome = copia.nome;
+    this->cpf = copia.cpf;
+    this->telefone = copia.telefone;
+    this->email = copia.email;
+    ativos++;
+}*/
+

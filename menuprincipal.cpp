@@ -2,27 +2,23 @@
 #include "sistema.cpp"
 
 #include "funcionario.hpp"
+#include "veterinario.hpp"
 
 void menuPrincipal()
 {
-    char opcao;
+    int opcao;
+
     limpaTela();
 
     do
     {
-        cout << "----------------------------------------------\n"
-             << "         PET-FERA - VERSAO 1.0 (BETA)       \n"
-             << "----------------------------------------------\n"
-             << "                 OPCOES:                    \n"
-             << "----------------------------------------------\n"
-             << " [F] - Cadastrar um Funcionario.            \n"
-             << " [A] - Cadastrar um Animal.                 \n"
-             << " [T] - Cadastrar um Tratador.               \n"
-             << " [V] - Cadastrar um Veterinario.            \n"
-             << "----------------------------------------------\n"
-             << " [U] - Atualizar Cadastro.                  \n"
-             << "----------------------------------------------\n"
-             << " [X] - Encerrar.\n"
+        cabecalhoPrograma();
+        cout << "OPCOES DE INSERCAO:                                 \n"
+             << "   [1] - Cadastrar um Animal.                       \n"
+             << "   [2] - Cadastrar um Tratador.                     \n"
+             << "   [3] - Cadastrar um Veterinario.                  \n"
+             << "----------------------------------------------------\n"
+             << "   [0] - Cancelar o Cadastro.\n"
              << "Selecione a opcao: ";
         cin >> opcao;
 
@@ -30,67 +26,47 @@ void menuPrincipal()
 
         switch (opcao)
         {
-        case 'F':
-        case 'f':
+        case 1:
         {
-            cout << "----------------------------------------------\n"
-                 << "         PET-FERA - VERSAO 1.0 (BETA)       \n"
-                 << "----------------------------------------------\n"
-                 << "Cadastro de novo Funcionario.\n";
+            cabecalhoPrograma();
+            cout << "Cadastro de novo Animal.\n";
+        }
+        break;
+        case 2:
+        {
+            cabecalhoPrograma();
+            cout << "Cadastro de novo Tratador.\n";
 
+            //Novo Tratador
+            Veterinario Novo("001", tratador, "Jose da Silva",
+                             "011.784.000-87", "(84) 9 9454-8545",
+                             "josedasilva@petfera.com.br", "CRT-5445");
         }
         break;
-        case 'A':
-        case 'a':
+        case 3:
         {
-            cout << "----------------------------------------------\n"
-                 << "         PET-FERA - VERSAO 1.0 (BETA)       \n"
-                 << "----------------------------------------------\n"
-                 << "Cadastro de novo Animal.\n";
+            cabecalhoPrograma();
+            cout << "Cadastro de novo Veterinario.\n";
+
+            //Novo Veterinário
+            Veterinario Novo("001", veterinario, "Marcelo Santos",
+                             "011.784.484-87", "(84) 9 8844-8545",
+                             "marcelosantos@ig.com.br", "CRMV-4544");            
         }
         break;
-        case 'T':
-        case 't':
-        {
-            cout << "----------------------------------------------\n"
-                 << "         PET-FERA - VERSAO 1.0 (BETA)       \n"
-                 << "----------------------------------------------\n"
-                 << "Cadastro de novo Tratador.\n";
-        }
-        break;
-        case 'V':
-        case 'v':
-        {
-            cout << "----------------------------------------------\n"
-                 << "         PET-FERA - VERSAO 1.0 (BETA)       \n"
-                 << "----------------------------------------------\n"
-                 << "Cadastro de novo Veterinario.\n";
-        }
-        break;
-        case 'U':
-        case 'u':
-        {
-            cout << "----------------------------------------------\n"
-                 << "         PET-FERA - VERSAO 1.0 (BETA)       \n"
-                 << "----------------------------------------------\n"
-                 << "Em producao.\n";
-        }
-        case 'X':
-        case 'x':
+        case 0:
         {
             return;
         }
         break;
         default:
-            cout << "----------------------------------------------\n"
-                 << "         PET-FERA - VERSAO 1.0 (BETA)       \n"
-                 << "----------------------------------------------\n"
-                 << "OPCAO INVALIDA.\n";
+            cabecalhoPrograma();
+            cout << "OPCAO INVALIDA.\n";
         }
         cout << endl;
 
         pausar();
         limpaTela();
-
     } while (opcao != 'X' && opcao != 'x');
 }
+
