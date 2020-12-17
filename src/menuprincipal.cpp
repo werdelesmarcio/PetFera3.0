@@ -1,8 +1,10 @@
 #include <iostream>
 #include "sistema.cpp"
 
-#include "funcionario.hpp"
-#include "veterinario.hpp"
+// Includes do projeto
+#include "lib/funcionario.hpp"
+#include "lib/tratador.hpp"
+#include "lib/veterinario.hpp"
 
 void menuPrincipal()
 {

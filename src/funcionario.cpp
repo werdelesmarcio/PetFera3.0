@@ -6,8 +6,9 @@
 #include <cstring>
 
 // Includes do projeto
-#include "funcionario.hpp"
-#include "veterinario.hpp"
+#include "lib/funcionario.hpp"
+#include "lib/tratador.hpp"
+#include "lib/veterinario.hpp"
 
 using std::cin;
 using std::cout;
@@ -101,19 +102,20 @@ void Funcionario::setEmail(string email)
     this->email = email;
 }
 
-int Funcionario::getAtivos()
-{
-    return ativos;
-}
-
-/*
 //--------------------------------------------- Módulo das Interfaces
 void Funcionario::cadastrarFuncionario() {}
 
 void Funcionario::listarFuncionario()
 {
     cout << "-------------------Listando os Funcionarios------------------\n";
-}*/
+}
+
+int Funcionario::getAtivos()
+{
+    return ativos;
+}
+
+
 
 
 //--------------------------------------------- Conversor para Enums
