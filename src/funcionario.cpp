@@ -101,20 +101,19 @@ void Funcionario::setEmail(string email)
     this->email = email;
 }
 
+int Funcionario::getAtivos()
+{
+    return ativos;
+}
+
+/*
 //--------------------------------------------- Módulo das Interfaces
 void Funcionario::cadastrarFuncionario() {}
 
 void Funcionario::listarFuncionario()
 {
     cout << "-------------------Listando os Funcionarios------------------\n";
-}
-
-int Funcionario::getAtivos()
-{
-    return ativos;
-}
-
-
+}*/
 
 
 //--------------------------------------------- Conversor para Enums
