@@ -6,8 +6,9 @@
 #include <cstring>
 
 // Includes do projeto
-#include "funcionario.hpp"
-#include "veterinario.hpp"
+#include "lib/funcionario.hpp"
+#include "lib/tratador.hpp"
+#include "lib/veterinario.hpp"
 
 using std::cin;
 using std::cout;

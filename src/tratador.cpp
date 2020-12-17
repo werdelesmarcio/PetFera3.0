@@ -1,4 +1,4 @@
-#include "tratador.hpp"
+#include "lib/tratador.hpp"
 
 Tratador::Tratador(string codigo, Cargo funcao, string nome,
                    string cpf, string telefone, string email, string docProfissional) : Funcionario(codigo, funcao, nome, cpf, telefone, email),
