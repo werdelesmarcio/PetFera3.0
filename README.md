@@ -16,8 +16,12 @@ Em desenvolvimento.
 ### Pré-requisitos:
 Em desenvolvimento
 
-## Equipe de Desenvolveores:
+## Equipe de Desenvolvedores:
 * **Werdeles Soares**
+* **Thais Felix**
+
+## Nome da Equipe
+* **IMDev**
 
 ## Licença: 
 ***Este projeto está sob Licença MIT.***
