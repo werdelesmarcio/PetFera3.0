@@ -3,11 +3,11 @@
 
 BIN = ./bin
 SRC = ./src
-INC = ./include
+INC = ./lib
 
 PROG = $(BIN)/PetFera
 CC = g++
-CPPFLAGS = -Wall -std=c++11 -I./include
+CPPFLAGS = -Wall -std=c++11 -I./lib
 
 OBJS = $(BIN)/main.o $(BIN)/funcionario.o $(BIN)/tratador.o $(BIN)/veterinario.o
 
