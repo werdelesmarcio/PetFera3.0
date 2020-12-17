@@ -32,3 +32,10 @@ void limpaTela()
 #endif
 }
 
+void cabecalhoPrograma()
+{
+    cout << "----------------------------------------------\n"
+         << "         PET-FERA - VERSAO 1.0 (BETA)         \n"
+         << "----------------------------------------------\n";
+}
+

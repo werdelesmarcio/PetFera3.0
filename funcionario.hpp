@@ -7,8 +7,6 @@
 #include <map>
 #include <string>
 
-
-
 using std::string;
 
 enum Cargo
@@ -20,16 +18,15 @@ enum Cargo
 class Funcionario
 {
 public:
+    int ativos;
+    
     //----------------------------------------- Constructo
     Funcionario();
 
-    Funcionario(string codigo,
-                Cargo funcao,
-                string nome,
-                string cpf,
-                string telefone,
-                string email);
+    Funcionario(string codigo, Cargo funcao, string nome,
+                string cpf, string telefone, string email);
 
+    //----------------------------------------- Cópia
     Funcionario(const Funcionario &copia);
 
     //----------------------------------------- Destrutor
@@ -51,26 +48,27 @@ public:
     void setTelefone(string telefone_);
     void setEmail(string email_);
 
-    //----------------------------------------- Lista
+    //----------------------------------------- Interfaces
     void listarFuncionario();
+    void cadastrarFuncionario();
+    void removerFuncionario();
+
+    //----------------------------------------- Métodos internos
     Funcionario *addFuncionario(Funcionario *novo);
     Funcionario *remFuncionario(string codigo);
 
-    static int getAtivo();
+    int getAtivos();
 
-    friend std::ostream& operator<<(std::ostream &o, Funcionario const f);
+    //friend std::ostream& operator<<(std::ostream &o, Funcionario const f);
+    //bool operator==(const Funcionario& outro) const;
 
-    bool operator==(const Funcionario& outro) const;
-
-private:
+protected:
     string codigo;
     Cargo funcao;
     string nome;
     string cpf;
     string telefone;
     string email;
-
-    static int ativo;
 };
 
 #endif
