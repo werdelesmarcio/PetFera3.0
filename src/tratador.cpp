@@ -13,9 +13,6 @@ Tratador::Tratador(string codigo, Cargo funcao, string nome,
          << "E-Mail: " << getEmail() << endl;
     cout << "Documento Profissional: " << getdocProfissional() << endl;
 
-    ativos++;
-
-    cout << "\nTOTAL DE CADASTROS: " << ativos << endl;
 }
 
 string

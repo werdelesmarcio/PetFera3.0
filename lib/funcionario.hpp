@@ -11,7 +11,7 @@ using std::string;
 
 enum Cargo
 {
-    tratador = 0,
+    tratador,
     veterinario
 };
 
@@ -19,7 +19,7 @@ class Funcionario
 {
 public:
     int ativos;
-    
+
     //----------------------------------------- Constructo
     Funcionario();
 
@@ -57,7 +57,7 @@ public:
     Funcionario *addFuncionario(Funcionario *novo);
     Funcionario *remFuncionario(string codigo);
 
-    int getAtivos();
+    int getAtivos() const;
 
     //friend std::ostream& operator<<(std::ostream &o, Funcionario const f);
     //bool operator==(const Funcionario& outro) const;
