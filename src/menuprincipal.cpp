@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 // Includes do projeto
 #include "funcionario.hpp"
@@ -25,6 +26,7 @@ void menuPrincipal()
              << "   [1] - Cadastrar um Animal.                       \n"
              << "   [2] - Cadastrar um Tratador.                     \n"
              << "   [3] - Cadastrar um Veterinario.                  \n"
+             << "   [4] - Listar os Tratadores.                      \n"
              << "----------------------------------------------------\n"
              << "   [0] - Cancelar o Cadastro.\n"
              << "Selecione a opcao: ";
@@ -69,6 +71,22 @@ void menuPrincipal()
             Tratador Novo("001", tratador, nome,
                           cpf, telefone,
                           email, documento);
+
+            /* std::ofstream Empregados_FILE;
+            std::string TEXTO = "Dados salvos";
+            Empregados_FILE.open("./database.txt", std::ios::app);
+            if (Empregados_FILE.is_open())
+            {
+                Tratador Novo("001", tratador, nome,
+                              cpf, telefone,
+                              email, documento);
+                Empregados_FILE << TEXTO;
+            }
+            else
+            {
+                cout << "Erro ao acessar arquivo" << endl;
+            }
+            Empregados_FILE.close();*/
         }
         break;
         case 3:
@@ -102,6 +120,10 @@ void menuPrincipal()
                              email, documento);
         }
         break;
+        case 4:
+        {
+          //  ostream& Tratador::listaTratador(ostream& o) const;
+        }break;
         case 0:
         {
             cout << "\n\nSAINDO DO SISTEMA\n\n";

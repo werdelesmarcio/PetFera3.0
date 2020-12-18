@@ -22,6 +22,9 @@ public:
     string getdocProfissional();
 
     void setdocProfissional(string docProfissional_);
+
+    friend ostream& operator<<(ostream& o, Tratador& t);
+    ostream& listaTratador(ostream& o) const;
 };
 
 

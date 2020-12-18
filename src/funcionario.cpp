@@ -94,10 +94,7 @@ void Funcionario::cadastrarFuncionario() {}
 
 void Funcionario::listarFuncionario()
 {
-    cout << "-------------------Listando os Funcionarios------------------\n";
-    for(int i=0; i<ativos; i++){
-        cout << "\nCodigo: " << Funcionario::getCodigo();
-    }
+    
 }
 
 int 
