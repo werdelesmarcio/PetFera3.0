@@ -1,4 +1,4 @@
-#include "lib/veterinario.hpp"
+#include "veterinario.hpp"
 
 Veterinario::Veterinario(string codigo, Cargo funcao, string nome,
                          string cpf, string telefone, string email, string docProfissional) : Funcionario(codigo, funcao, nome, cpf, telefone, email),

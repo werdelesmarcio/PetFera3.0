@@ -3,9 +3,9 @@
 #include <string>
 
 // Includes do projeto
-#include "lib/funcionario.hpp"
-#include "lib/tratador.hpp"
-#include "lib/veterinario.hpp"
+#include "funcionario.hpp"
+#include "tratador.hpp"
+#include "veterinario.hpp"
 
 // 
 #include "menuprincipal.cpp"
