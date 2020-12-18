@@ -3,7 +3,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/werdelesmarcio/PetFera3.0?style=for-the-badge)](https://github.com/werdelesmarcio/PetFera3.0/issues?style=for-the-badge) [![GitHub forks](https://img.shields.io/github/forks/werdelesmarcio/PetFera3.0?style=for-the-badge)](https://github.com/werdelesmarcio/PetFera3.0/network?style=for-the-badge)  [![GitHub stars](https://img.shields.io/github/stars/werdelesmarcio/PetFera3.0?style=for-the-badge)](https://github.com/werdelesmarcio/PetFera3.0/stargazers?style=for-the-badge)  [![GitHub license](https://img.shields.io/github/license/werdelesmarcio/PetFera3.0?style=for-the-badge)](https://github.com/werdelesmarcio/PetFera3.0/blob/main/LICENSE?style=for-the-badge)  ![GitHub top language](https://img.shields.io/github/languages/top/werdelesmarcio/PetFera3.0?style=for-the-badge)  ![GitHub pull requests](https://img.shields.io/github/issues-pr/werdelesmarcio/PetFera3.0?style=for-the-badge) 
 
 ## Nome da Equipe
-* **IMDev**
+**IMDev**
 
 ## Repositório para a aplicação Pet-Fera.
 **Pet-Fera** consiste em uma aplicação que tem como finalidade auxiliar no gerenciamento de Empresas do segmento de Petshops, especializadas em venda e tratamento de animais domésticos, exóticos e silvestres. Seguindo as orientações do Orgão de Defesa da Fauna e da Flora IBAMA, após passar por vistoria e com a devida documentação emitida, os animais que serão tratados poderão ser comercializados. 

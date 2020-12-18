@@ -22,6 +22,6 @@ void limpaTela()
 
 void cabecalhoPrograma()
 {
-    cout << "----------------------------------------------\n";
+    cout << "Inserindo Dados ----------------------------------------------\n";
 }
 

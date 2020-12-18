@@ -19,7 +19,7 @@ void menuPrincipal()
     do
     {
         cout << "----------------------------------------------------\n"
-             << "         PET-FERA - VERSÃO: 3.0 (BETA)             \n"
+             << "         PET-FERA - VERSÃO: 3.0 (BETA)              \n"
              << "----------------------------------------------------\n";
         cout << "OPCOES DE INSERCAO:                                 \n"
              << "   [1] - Cadastrar um Animal.                       \n"
