@@ -1,23 +1,24 @@
 #include <iostream>
-
-// Includes do projeto
-#include "funcionario.hpp"
-#include "tratador.hpp"
-#include "veterinario.hpp"
-
 #include "sistema.cpp"
+
+#include "funcionario.hpp"
+#include "veterinario.hpp"
+#include "tratador.hpp"
 
 void menuPrincipal()
 {
     int opcao;
+    string nome;
+    string cpf;
+    string telefone;
+    string email;
+    string documento;
 
-    //limpaTela();
+    limpaTela();
 
     do
     {
-        cout << "----------------------------------------------------\n"
-             << "         PRT-FERA - VERSÃO: 3.0 (BETA)             \n"
-             << "----------------------------------------------------\n";
+        cabecalhoPrograma();
         cout << "OPCOES DE INSERCAO:                                 \n"
              << "   [1] - Cadastrar um Animal.                       \n"
              << "   [2] - Cadastrar um Tratador.                     \n"
@@ -27,7 +28,7 @@ void menuPrincipal()
              << "Selecione a opcao: ";
         cin >> opcao;
 
-        // limpaTela();
+        limpaTela();
 
         switch (opcao)
         {
@@ -42,10 +43,30 @@ void menuPrincipal()
             cabecalhoPrograma();
             cout << "Cadastro de novo Tratador.\n";
 
+            cout << "Nome:";
+            cin.ignore();
+            getline( cin, nome );
+
+            cout << "CPF:";
+            //cin.ignore();
+            getline( cin, cpf );
+
+            cout << "Telefone:";
+            //cin.ignore();
+            getline( cin, telefone );
+
+            cout << "email:";
+            //cin.ignore();
+            getline( cin, email );
+
+            cout << "documento profissional:";
+            //cin.ignore();
+            getline( cin, documento );
+
             //Novo Tratador
-            Veterinario Novo("001", tratador, "Jose da Silva",
-                             "011.784.000-87", "(84) 9 9454-8545",
-                             "josedasilva@petfera.com.br", "CRT-5445");
+            Tratador Novo("001", tratador, nome,
+                             cpf, telefone,
+                             email, documento);
         }
         break;
         case 3:
@@ -53,10 +74,30 @@ void menuPrincipal()
             cabecalhoPrograma();
             cout << "Cadastro de novo Veterinario.\n";
 
+            cout << "Nome:";
+            cin.ignore();
+            getline( cin, nome );
+
+            cout << "CPF:";
+            //cin.ignore();
+            getline( cin, cpf );
+
+            cout << "Telefone:";
+            //cin.ignore();
+            getline( cin, telefone );
+
+            cout << "email:";
+            //cin.ignore();
+            getline( cin, email );
+
+            cout << "documento profissional:";
+            //cin.ignore();
+            getline( cin, documento );
+
             //Novo Veterinário
-            Veterinario Novo("001", veterinario, "Marcelo Santos",
-                             "011.784.484-87", "(84) 9 8844-8545",
-                             "marcelosantos@ig.com.br", "CRMV-4544");
+            Veterinario Novo("001", veterinario, nome,
+                             cpf, telefone,
+                             email, documento);            
         }
         break;
         case 0:
@@ -70,11 +111,8 @@ void menuPrincipal()
         }
         cout << endl;
 
-        std::cin.clear();
-        std::cout << "Pressione qualquer tecla para continuar. . ." << std::endl;
-        std::cin.get();
-
         pausar();
         limpaTela();
     } while (opcao != 'X' && opcao != 'x');
 }
+
