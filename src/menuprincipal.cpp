@@ -10,13 +10,16 @@
 void menuPrincipal()
 {
     int opcao;
-
-    //limpaTela();
+    string nome;
+    string cpf;
+    string telefone;
+    string email;
+    string documento;
 
     do
     {
         cout << "----------------------------------------------------\n"
-             << "         PRT-FERA - VERSÃO: 3.0 (BETA)             \n"
+             << "         PET-FERA - VERSÃO: 3.0 (BETA)             \n"
              << "----------------------------------------------------\n";
         cout << "OPCOES DE INSERCAO:                                 \n"
              << "   [1] - Cadastrar um Animal.                       \n"
@@ -42,10 +45,30 @@ void menuPrincipal()
             cabecalhoPrograma();
             cout << "Cadastro de novo Tratador.\n";
 
+            cout << "Nome: ";
+            cin.ignore();
+            getline(cin, nome);
+
+            cout << "CPF: ";
+            //cin.ignore();
+            getline(cin, cpf);
+
+            cout << "Telefone: ";
+            //cin.ignore();
+            getline(cin, telefone);
+
+            cout << "Email: ";
+            //cin.ignore();
+            getline(cin, email);
+
+            cout << "Documento Profissional: ";
+            //cin.ignore();
+            getline(cin, documento);
+
             //Novo Tratador
-            Veterinario Novo("001", tratador, "Jose da Silva",
-                             "011.784.000-87", "(84) 9 9454-8545",
-                             "josedasilva@petfera.com.br", "CRT-5445");
+            Tratador Novo("001", tratador, nome,
+                          cpf, telefone,
+                          email, documento);
         }
         break;
         case 3:
@@ -53,14 +76,35 @@ void menuPrincipal()
             cabecalhoPrograma();
             cout << "Cadastro de novo Veterinario.\n";
 
-            //Novo Veterinário
-            Veterinario Novo("001", veterinario, "Marcelo Santos",
-                             "011.784.484-87", "(84) 9 8844-8545",
-                             "marcelosantos@ig.com.br", "CRMV-4544");
+            cout << "Nome: ";
+            cin.ignore();
+            getline(cin, nome);
+
+            cout << "CPF: ";
+            //cin.ignore();
+            getline(cin, cpf);
+
+            cout << "Telefone: ";
+            //cin.ignore();
+            getline(cin, telefone);
+
+            cout << "Email: ";
+            //cin.ignore();
+            getline(cin, email);
+
+            cout << "Documento Profissional: ";
+            //cin.ignore();
+            getline(cin, documento);
+
+            //Novo Tratador
+            Veterinario Novo("002", veterinario, nome,
+                             cpf, telefone,
+                             email, documento);
         }
         break;
         case 0:
         {
+            cout << "\n\nSAINDO DO SISTEMA\n\n";
             return;
         }
         break;
@@ -68,11 +112,8 @@ void menuPrincipal()
             cabecalhoPrograma();
             cout << "OPCAO INVALIDA.\n";
         }
-        cout << endl;
 
-        std::cin.clear();
-        std::cout << "Pressione qualquer tecla para continuar. . ." << std::endl;
-        std::cin.get();
+        cout << endl;
 
         pausar();
         limpaTela();

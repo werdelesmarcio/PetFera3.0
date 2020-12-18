@@ -14,19 +14,6 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-std::ostream &operator<<(std::ostream &out, const Cargo value)
-{
-    static std::map<Cargo, string> nomeCargo;
-    if (nomeCargo.size() == 0)
-    {
-#define INSERT(p) nomeCargo[p] = #p
-        INSERT(tratador);
-        INSERT(veterinario);
-#undef INSERT
-    }
-    return out << nomeCargo[value];
-}
-
 //--------------------------------------------- Módulo de inserção
 Funcionario::Funcionario(string codigo, Cargo funcao, string nome,
                          string cpf, string telefone, string email) : codigo(codigo), funcao(funcao), nome(nome),
@@ -108,14 +95,16 @@ void Funcionario::cadastrarFuncionario() {}
 void Funcionario::listarFuncionario()
 {
     cout << "-------------------Listando os Funcionarios------------------\n";
+    for(int i=0; i<ativos; i++){
+        cout << "\nCodigo: " << Funcionario::getCodigo();
+    }
 }
 
-int Funcionario::getAtivos()
+int 
+Funcionario::getAtivos() const
 {
-    return ativos;
+    return this->ativos;
 }
-
-
 
 
 //--------------------------------------------- Conversor para Enums
