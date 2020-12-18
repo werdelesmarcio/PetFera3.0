@@ -30,7 +30,7 @@ _A principal dificuldade durante o projeto foi a abstração dos dados o que ger
 * **Faltou trabalhar a parte dos ponteiros inteligentes**
 * **Faltou concluir a parte de salvar os dados em arquivos**
 * **Faltou implementar a recuperação dos dados salvos nos arquivos**
-* **Faltou tratar dos dados e remoção de dados
+* **Faltou tratar dos dados e remoção de dados**
 
 
 ## Licença: 
