@@ -1,20 +1,23 @@
 #include <iostream>
-#include "sistema.cpp"
 
 // Includes do projeto
-#include "lib/funcionario.hpp"
-#include "lib/tratador.hpp"
-#include "lib/veterinario.hpp"
+#include "funcionario.hpp"
+#include "tratador.hpp"
+#include "veterinario.hpp"
+
+#include "sistema.cpp"
 
 void menuPrincipal()
 {
     int opcao;
 
-    limpaTela();
+    //limpaTela();
 
     do
     {
-        cabecalhoPrograma();
+        cout << "----------------------------------------------------\n"
+             << "         PRT-FERA - VERSÃO: 3.0 (BETA)             \n"
+             << "----------------------------------------------------\n";
         cout << "OPCOES DE INSERCAO:                                 \n"
              << "   [1] - Cadastrar um Animal.                       \n"
              << "   [2] - Cadastrar um Tratador.                     \n"
@@ -24,7 +27,7 @@ void menuPrincipal()
              << "Selecione a opcao: ";
         cin >> opcao;
 
-        limpaTela();
+        // limpaTela();
 
         switch (opcao)
         {
@@ -53,7 +56,7 @@ void menuPrincipal()
             //Novo Veterinário
             Veterinario Novo("001", veterinario, "Marcelo Santos",
                              "011.784.484-87", "(84) 9 8844-8545",
-                             "marcelosantos@ig.com.br", "CRMV-4544");            
+                             "marcelosantos@ig.com.br", "CRMV-4544");
         }
         break;
         case 0:
@@ -67,8 +70,11 @@ void menuPrincipal()
         }
         cout << endl;
 
+        std::cin.clear();
+        std::cout << "Pressione qualquer tecla para continuar. . ." << std::endl;
+        std::cin.get();
+
         pausar();
         limpaTela();
     } while (opcao != 'X' && opcao != 'x');
 }
-
