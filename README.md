@@ -5,6 +5,10 @@
 ## Nome da Equipe
 **IMDev**
 
+## Equipe de Desenvolvedores:
+* **Werdeles Soares**
+* **Thais Felix**
+
 ## Repositório para a aplicação Pet-Fera.
 **Pet-Fera** consiste em uma aplicação que tem como finalidade auxiliar no gerenciamento de Empresas do segmento de Petshops, especializadas em venda e tratamento de animais domésticos, exóticos e silvestres. Seguindo as orientações do Orgão de Defesa da Fauna e da Flora IBAMA, após passar por vistoria e com a devida documentação emitida, os animais que serão tratados poderão ser comercializados. 
 
@@ -21,9 +25,12 @@ Compilador GCC _(para Linux)_ ou MINWIN _(para Windows)_
 ## Dificuldades Gerais
 _A principal dificuldade durante o projeto foi a abstração dos dados o que gerou um gasto excessivo de tempo, atrapalhando o processo de implementação. Também está sendo um desafio a questão dos ponteiros inteligentes._
 
-## Equipe de Desenvolvedores:
-* **Werdeles Soares**
-* **Thais Felix**
+## Erros e Faltas
+* **Faltou implementar Animal**
+* **Faltou trabalhar a parte dos ponteiros inteligentes**
+* **Faltou concluir a parte de salvar os dados em arquivos**
+* **Faltou implementar a recuperação dos dados salvos nos arquivos**
+* **Faltou tratar dos dados e remoção de dados**
 
 
 ## Licença: 
