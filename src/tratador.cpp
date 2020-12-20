@@ -1,45 +1,61 @@
 #include "tratador.hpp"
 
-#include <iostream>
-#include <iomanip>
-
-using std::setfill;
-using std::setw;
-
-using namespace std;
-
-
+//-----------------------------------------------Constructor
 Tratador::Tratador(string codigo, Cargo funcao, string nome,
-                   string cpf, string telefone, string email, string docProfissional) : Funcionario(codigo, funcao, nome, cpf, telefone, email),
-                                                                                        docProfissional(docProfissional)
+                   string cpf, string telefone, string email,
+                   Risco risco) : Funcionario(codigo, funcao, nome, cpf, telefone, email), risco(risco)
 {
-    cout << "\n------------------Tratador Inserido------------------" << endl;
+    this->funcao = tratador;
+
+    /*cout << "\n------------------Tratador Inserido------------------" << endl;
     cout << "Codigo: " << getCodigo() << " - "
          << "Cargo: " << getFuncao() << endl;
     cout << "Nome: " << getNome() << " - "
          << "CPF: " << getCpf() << endl;
     cout << "Telefone: " << getTelefone() << " - "
          << "E-Mail: " << getEmail() << endl;
-    cout << "Documento Profissional: " << getdocProfissional() << endl;
+    cout << "Risco de Exposicao: " << getRisco() << endl;*/
 }
 
-string
-Tratador::getdocProfissional()
+//----------------------------------------------- Destrutor
+Tratador::~Tratador() {}
+
+//----------------------------------------------- Getters
+Risco Tratador::getRisco() const
 {
-    return this->docProfissional;
+    return this->risco;
 }
 
-void Tratador::setdocProfissional(string docProfissional)
+//------------------------------------------------ Setters
+void Tratador::setRisco(Risco risco)
 {
-    this->docProfissional = docProfissional;
+    this->risco = risco;
 }
 
+//------------------------------------------------ Impressão
 ostream &
-Tratador::listaTratador(ostream& o) const
+Tratador::print(ostream &impressao) const
 {
-    o << std::setfill(' ') << std::setw(10) << this->nome
-      << std::setfill(' ') << std::setw(10) << this->funcao
-      << std::setfill(' ') << std::setw(10) << this->cpf;
+    string strRisco;
 
-    return o;
+    if (this->risco == 0)
+    {
+        strRisco = "Verde";
+    }
+    else if (this->risco == 1)
+    {
+        strRisco = "Amarelo";
+    }
+    else
+    {
+        strRisco = "Vermelho";
+    }
+
+    cout << "\n------------------Tratador Inserido------------------" << endl;
+    impressao << "Codigo: " << getCodigo() << " - "
+              << "Cargo: " << getFuncao() << "\nNome: " << getNome() << " - "
+              << "CPF: " << getCpf() << "\nTelefone: " << getTelefone() << " - "
+              << "E-Mail: " << getEmail() << "\nRisco de Exposicao: " << getRisco() << endl;
+
+    return impressao;
 }

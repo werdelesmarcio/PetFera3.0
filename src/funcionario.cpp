@@ -1,23 +1,22 @@
-#include <iostream>
+/*#include <iostream>
 #include <string>
 #include <iomanip>
 #include <cassert>
 #include <map>
-#include <cstring>
+#include <cstring>*/
+
+#include <iostream>
 
 // Includes do projeto
 #include "funcionario.hpp"
-#include "tratador.hpp"
-#include "veterinario.hpp"
 
-using std::cin;
-using std::cout;
-using std::endl;
+//---------------------------------------------- Constructor
+Funcionario::Funcionario(){};
 
-//--------------------------------------------- Módulo de inserção
+//--------------------------------------------- Lista de parametros
 Funcionario::Funcionario(string codigo, Cargo funcao, string nome,
                          string cpf, string telefone, string email) : codigo(codigo), funcao(funcao), nome(nome),
-                                                                      cpf(cpf), telefone(telefone), email(email){}
+                                                                      cpf(cpf), telefone(telefone), email(email) {}
 
 //--------------------------------------------- Chamada do Destrutor
 Funcionario::~Funcionario() {}
@@ -59,42 +58,46 @@ Funcionario::getEmail() const
 }
 
 //--------------------------------------------- Chamada dos Setters
-void Funcionario::setCodigo(string codigo)
+void 
+Funcionario::setCodigo(string codigo)
 {
     this->codigo = codigo;
 }
 
-void Funcionario::setFuncao(Cargo funcao)
+void 
+Funcionario::setFuncao(Cargo funcao)
 {
     this->funcao = funcao;
 }
 
-void Funcionario::setNome(string nome)
+void 
+Funcionario::setNome(string nome)
 {
     this->nome = nome;
 }
 
-void Funcionario::setCpf(string cpf)
+void 
+Funcionario::setCpf(string cpf)
 {
     this->cpf = cpf;
 }
 
-void Funcionario::setTelefone(string telefone)
+void 
+Funcionario::setTelefone(string telefone)
 {
     this->telefone = telefone;
 }
 
-void Funcionario::setEmail(string email)
+void 
+Funcionario::setEmail(string email)
 {
     this->email = email;
 }
 
 //--------------------------------------------- Módulo das Interfaces
-void Funcionario::cadastrarFuncionario() {}
-
-void Funcionario::listarFuncionario()
+std::ostream &operator<<(std::ostream &impressao, Funcionario const &fun)
 {
-    
+    return fun.print(impressao);
 }
 
 int 
@@ -102,7 +105,6 @@ Funcionario::getAtivos() const
 {
     return this->ativos;
 }
-
 
 //--------------------------------------------- Conversor para Enums
 /*std::ostream &operator<<(std::ostream &out, const Cargo value)
@@ -139,4 +141,3 @@ Funcionario::Funcionario(const Funcionario &copia)
     this->email = copia.email;
     ativos++;
 }*/
-

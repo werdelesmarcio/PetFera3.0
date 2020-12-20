@@ -15,12 +15,20 @@ class Veterinario : public Funcionario
 private:
     string docProfissional;
 
+    ostream& print(ostream& o) const;
+
 public:
+//------------------------------------- Constructor
     Veterinario(string codigo, Cargo funcao, string nome,
                 string cpf, string telefone, string email, string docProfissional);
 
-    string getdocProfissional();
+//------------------------------------- Destrutor
+    ~Veterinario();
 
+//------------------------------------- Getters
+    string getdocProfissional() const;
+
+//------------------------------------- Setters
     void setdocProfissional(string docProfissional_);
 };
 

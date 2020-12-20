@@ -68,9 +68,7 @@ void menuPrincipal()
             getline(cin, documento);
 
             //Novo Tratador
-            Tratador Novo("001", tratador, nome,
-                          cpf, telefone,
-                          email, documento);
+            Tratador Novo("001", tratador, nome, cpf, telefone, email, documento);
 
             /* std::ofstream Empregados_FILE;
             std::string TEXTO = "Dados salvos";
@@ -115,9 +113,7 @@ void menuPrincipal()
             getline(cin, documento);
 
             //Novo Tratador
-            Veterinario Novo("002", veterinario, nome,
-                             cpf, telefone,
-                             email, documento);
+            Veterinario Novo("002", veterinario, nome, cpf, telefone, email, documento);
         }
         break;
         case 4:

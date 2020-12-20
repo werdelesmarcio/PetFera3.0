@@ -20,19 +20,15 @@ class Funcionario
 public:
     int ativos;
 
-    //----------------------------------------- Constructo
+//----------------------------------------- Constructo
     Funcionario();
-
     Funcionario(string codigo, Cargo funcao, string nome,
                 string cpf, string telefone, string email);
 
-    //----------------------------------------- Cópia
-    Funcionario(const Funcionario &copia);
+//----------------------------------------- Destrutor
+    virtual ~Funcionario();
 
-    //----------------------------------------- Destrutor
-    ~Funcionario();
-
-    //----------------------------------------- Getters
+//----------------------------------------- Getters
     string getCodigo() const;
     Cargo getFuncao() const;
     string getNome() const;
@@ -40,7 +36,7 @@ public:
     string getTelefone() const;
     string getEmail() const;
 
-    //----------------------------------------- Setters
+//----------------------------------------- Setters
     void setCodigo(string codigo_);
     void setFuncao(Cargo funcao_);
     void setNome(string nome_);
@@ -48,19 +44,13 @@ public:
     void setTelefone(string telefone_);
     void setEmail(string email_);
 
-    //----------------------------------------- Interfaces
-    void listarFuncionario();
-    void cadastrarFuncionario();
-    void removerFuncionario();
-
-    //----------------------------------------- Métodos internos
-    Funcionario *addFuncionario(Funcionario *novo);
-    Funcionario *remFuncionario(string codigo);
-
+//----------------------------------------- Métodos internos
     int getAtivos() const;
 
-    //friend std::ostream& operator<<(std::ostream &o, Funcionario const f);
-    //bool operator==(const Funcionario& outro) const;
+    friend std::ostream& operator<<(std::ostream &o, Funcionario const &f);
+
+private:
+    virtual ostream& print(ostream&) const = 0;
 
 protected:
     string codigo;

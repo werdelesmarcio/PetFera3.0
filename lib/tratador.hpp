@@ -5,28 +5,38 @@
 
 #include <iostream>
 
-//------------------------------------Includes do projeto
+//------------------------------------ Includes do projeto
 #include "funcionario.hpp"
 
 using namespace std;
 
+//----------------------------------- Nível de exposição ao risco
+enum Risco{
+    verde, 
+    amarelo, 
+    vermelho
+};
+
 class Tratador : public Funcionario
 {
 private:
-    string docProfissional;
+    Risco risco;
+
+    ostream& print(ostream& o) const;
 
 public:
+//------------------------------------ Constructor
     Tratador(string codigo, Cargo funcao, string nome,
-                string cpf, string telefone, string email, string docProfissional);
+                string cpf, string telefone, string email, Risco risco);
 
-    string getdocProfissional();
+//------------------------------------ Destrutor
+    ~Tratador();
 
-    void setdocProfissional(string docProfissional_);
-
-    friend ostream& operator<<(ostream& o, Tratador& t);
-    ostream& listaTratador(ostream& o) const;
+//------------------------------------ Getters
+    Risco getRisco() const;
+    
+//------------------------------------ Setters
+    void setRisco(Risco risco);
 };
-
-
 
 #endif
