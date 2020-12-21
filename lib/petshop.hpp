@@ -8,9 +8,11 @@
 
 #include "empregado.hpp"
 
+using std::vector;
+
 class Petshop{
 public:
-    Empregado empregado;
+    Empregado empregados;
     
     void menu();
     void pausar();

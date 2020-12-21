@@ -5,6 +5,8 @@
 #include "funcionario.hpp"
 #include "tratador.hpp"
 #include "veterinario.hpp"
+#include "empregado.hpp"
+#include "petshop.hpp"
 
 #include "sistema.cpp"
 
@@ -16,25 +18,44 @@ void menuPrincipal()
     string telefone;
     string email;
     string documento;
+    pausar();
+    limpaTela();
 
-    do
+
+
+    
+
+    if (opcao == 1)
     {
-        cout << "----------------------------------------------------\n"
-             << "         PET-FERA - VERSÃO: 3.0 (BETA)              \n"
-             << "----------------------------------------------------\n";
-        cout << "OPCOES DE INSERCAO:                                 \n"
-             << "   [1] - Cadastrar um Animal.                       \n"
-             << "   [2] - Cadastrar um Tratador.                     \n"
-             << "   [3] - Cadastrar um Veterinario.                  \n"
-             << "   [4] - Listar os Tratadores.                      \n"
-             << "----------------------------------------------------\n"
-             << "   [0] - Cancelar o Cadastro.\n"
-             << "Selecione a opcao: ";
-        cin >> opcao;
+        cout << "Cadastros de Animais nao implementado.\n";
+    }
+    else if (opcao == 2)
+    {
+        cout << "Cadastrar um novo Funcionario.\n";
+        
+    }
+    else if (opcao == 3)
+    {
+    }
+    else if (opcao == 4)
+    {
+    }
+    else if (opcao == 0)
+    {
+    }
+    else
+    {
+        cout << "Opcao invalida..." << endl;
+    }
+}
+
+/*do
+    {
+       
 
         // limpaTela();
 
-        switch (opcao)
+/*        switch (opcao)
         {
         case 1:
         {
@@ -85,8 +106,8 @@ void menuPrincipal()
                 cout << "Erro ao acessar arquivo" << endl;
             }
             Empregados_FILE.close();*/
-        }
-        break;
+
+/*   break;
         case 3:
         {
             cabecalhoPrograma();
@@ -135,5 +156,4 @@ void menuPrincipal()
 
         pausar();
         limpaTela();
-    } while (opcao != 'X' && opcao != 'x');
-}
+    } while (opcao != 'X' && opcao != 'x');*/

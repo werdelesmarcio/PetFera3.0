@@ -15,7 +15,7 @@
 class Empregado{
 private:
     vector<std::shared_ptr<Funcionario>> funcionarios; //--- Ponteiro para Funcionarios
-    //void limparTelaFuncionarios();
+    void limparTelaFuncionarios();
 
 public:
     bool criarFuncionario();
