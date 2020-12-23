@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <stdlib.h>
 
 // Includes do projeto
 #include "funcionario.hpp"
@@ -14,7 +15,6 @@
 using namespace std;
 
 int main(){
-    //menuPrincipal();
 
     Petshop novoPetshop;
 

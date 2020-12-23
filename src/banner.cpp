@@ -1,18 +1,35 @@
 #include <iostream>
 #include <fstream>
 
-// Includes do projeto
-#include "funcionario.hpp"
-#include "tratador.hpp"
-#include "veterinario.hpp"
-#include "empregado.hpp"
-#include "petshop.hpp"
+using std::cout;
+using std::endl;
 
-#include "sistema.cpp"
-
-void menuPrincipal()
+void Banner()
 {
-    int opcao;
+    cout << " ██████╗░███████╗████████╗░░░░░░███████╗███████╗██████╗░░█████╗░\n"
+         << " ██╔══██╗██╔════╝╚══██╔══╝░░░░░░██╔════╝██╔════╝██╔══██╗██╔══██╗\n"
+         << " ██████╔╝█████╗░░░░░██║░░░█████╗█████╗░░█████╗░░██████╔╝███████║\n"
+         << " ██╔═══╝░██╔══╝░░░░░██║░░░╚════╝██╔══╝░░██╔══╝░░██╔══██╗██╔══██║\n"
+         << " ██║░░░░░███████╗░░░██║░░░░░░░░░██║░░░░░███████╗██║░░██║██║░░██║\n"
+         << " ╚═╝░░░░░╚══════╝░░░╚═╝░░░░░░░░░╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝\n"
+         << endl
+         << " PET-FERA - VERSÃO: 3.1 (BETA)              \n"
+         << " Software de gestao de Petshop."
+         << "-----------------------------------------------------\n"
+         << "Opcoes de insercao de dados                          \n"
+         << "   [1] - Cadastrar Animais. (NAO IMPLEMENTADO)       \n"
+         << "   [2] - Cadastrar Funcionario.                      \n"
+         << "   [3] - Alterar Cadastro de Funcionario.            \n"
+         << "   [4] - Excluir Cadastro de Funcionario.            \n"
+         << "   [5] - Salvar Dados do Funcionarios.               \n"
+         << "   [6] - Listar Funcionarios Cadastrados             \n"
+         << "-----------------------------------------------------\n"
+         << "   [0] - Fechar o programa.\n";
+
+}
+
+
+/*int opcao;
     string nome;
     string cpf;
     string telefone;
@@ -49,13 +66,13 @@ void menuPrincipal()
     }
 }
 
-/*do
+do
     {
        
 
         // limpaTela();
 
-/*        switch (opcao)
+        switch (opcao)
         {
         case 1:
         {
@@ -107,7 +124,7 @@ void menuPrincipal()
             }
             Empregados_FILE.close();*/
 
-/*   break;
+/*break;
         case 3:
         {
             cabecalhoPrograma();
@@ -156,4 +173,6 @@ void menuPrincipal()
 
         pausar();
         limpaTela();
-    } while (opcao != 'X' && opcao != 'x');*/
+    } while (opcao != 'X' && opcao != 'x');
+    
+    */
