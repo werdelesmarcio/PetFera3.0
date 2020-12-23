@@ -9,6 +9,7 @@
 #include "funcionario.hpp"
 
 using namespace std;
+using std::string;
 
 //----------------------------------- Nível de exposição ao risco
 enum Risco{
@@ -26,7 +27,7 @@ private:
 
 public:
 //------------------------------------ Constructor
-    Tratador(string codigo, Cargo funcao, string nome,
+    Tratador(string codigo, string nome,
                 string cpf, string telefone, string email, Risco risco);
 
 //------------------------------------ Destrutor

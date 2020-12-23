@@ -1,9 +1,12 @@
 #include "veterinario.hpp"
+#include <iostream>
+
+using std::allocator;
 
 //----------------------------------------------- Constructor
-Veterinario::Veterinario(string codigo, Cargo funcao, string nome,
+Veterinario::Veterinario(string codigo, /*Cargo funcao, */ string nome,
                          string cpf, string telefone, string email,
-                         string docProfissional) : Funcionario(codigo, funcao, nome, cpf, telefone,
+                         string docProfissional) : Funcionario(codigo, /*funcao, */ nome, cpf, telefone,
                                                                email),
                                                    docProfissional(docProfissional)
 {
@@ -30,15 +33,14 @@ Veterinario::getdocProfissional() const
 }
 
 //------------------------------------------------ Setters
-void 
-Veterinario::setdocProfissional(string docProfissional)
+void Veterinario::setdocProfissional(string docProfissional)
 {
     this->docProfissional = docProfissional;
 }
 
 //------------------------------------------------ Impressão dos dados
-ostream& 
-Veterinario::print(ostream& impressao) const
+ostream &
+Veterinario::print(ostream &impressao) const
 {
     cout << "\n------------------Veterinario Inserido------------------" << endl;
     impressao << "Codigo: " << getCodigo() << " - "

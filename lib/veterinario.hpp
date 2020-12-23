@@ -19,8 +19,8 @@ private:
 
 public:
 //------------------------------------- Constructor
-    Veterinario(string codigo, Cargo funcao, string nome,
-                string cpf, string telefone, string email, string docProfissional);
+    Veterinario(string codigo, string nome, string cpf, 
+                string telefone, string email, string docProfissional);
 
 //------------------------------------- Destrutor
     ~Veterinario();

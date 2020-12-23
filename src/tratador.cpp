@@ -1,9 +1,17 @@
 #include "tratador.hpp"
 
 //-----------------------------------------------Constructor
-Tratador::Tratador(string codigo, Cargo funcao, string nome,
-                   string cpf, string telefone, string email,
-                   Risco risco) : Funcionario(codigo, funcao, nome, cpf, telefone, email), risco(risco)
+Tratador::Tratador(string codigo, 
+                   string nome,
+                   string cpf, 
+                   string telefone, 
+                   string email,
+                   Risco risco) : Funcionario(codigo, 
+                                              nome, 
+                                              cpf,
+                                              telefone, 
+                                              email), 
+                                              risco(risco)
 {
     this->funcao = tratador;
 

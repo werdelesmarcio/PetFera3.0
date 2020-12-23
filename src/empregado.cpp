@@ -4,11 +4,24 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <ostream>
 
 //------------------------------------------------- Includes do projeto
 #include "empregado.hpp"
 
-using namespace std;
+//using std::allocator;
+using std::cout;
+using std::endl;
+using std::fixed;
+using std::ifstream;
+using std::ios;
+using std::istream;
+using std::ofstream;
+using std::ostream;
+using std::setprecision;
+using std::string;
+using std::stringstream;
+using std::vector;
 
 //------------------------------------------------ Entrada de um empregado ao vetor
 bool Empregado::adicionarFuncionario(shared_ptr<Funcionario> funcionario)
@@ -188,12 +201,18 @@ void Empregado::carregarFuncionarios()
         }
         if (tokens.at(0) == "1")
         {
+            adicionarFuncionario(make_shared<Veterinario>(tokens.at(1), tokens.at(2),
+                                                          tokens.at(3), tokens.at(4),
+                                                          tokens.at(5), tokens.at(6)));
+        }
+        if (tokens.at(0) == "0")
+        {
             Risco risco;
-            if (tokens.at(4) == "0")
+            if (tokens.at(6) == "0")
             {
                 risco = verde;
             }
-            else if (tokens.at(4) == "1")
+            else if (tokens.at(6) == "1")
             {
                 risco = amarelo;
             }
@@ -201,7 +220,9 @@ void Empregado::carregarFuncionarios()
             {
                 risco = vermelho;
             }
-            adicionarFuncionario(make_shared<Tratador>(tokens.at(1), tokens.at(2), tokens.at(3), risco));
+            adicionarFuncionario(make_shared<Tratador>(tokens.at(1), tokens.at(2),
+                                                       tokens.at(3), tokens.at(4),
+                                                       tokens.at(5), risco));
         }
     }
 }
@@ -216,6 +237,7 @@ void Empregado::alterarFuncionario(shared_ptr<Funcionario> funcionario)
     string novoTelefone;
     string novoEmail;
     string novoDocumento;
+    //Risco novoRisco;
 
     do
     {
@@ -272,11 +294,11 @@ void Empregado::alterarFuncionario(shared_ptr<Funcionario> funcionario)
                 cout << "Opcao invalida." << endl;
             }
         }
-        else if (listar = 6)
+        else if (listar == 6)
         {
             if (funcionario->getFuncao() == 0)
             {
-                Risco = novoRisco;
+                Risco novoRisco;
                 shared_ptr<Tratador> alterado = dynamic_pointer_cast<Tratador>(funcionario);
                 cout << "Novo nivel de risco:\n "
                      << "(1 para VERDE)\n"
@@ -318,4 +340,16 @@ bool Empregado::encFuncionario(string nome)
         return false;
     }
     return true;
+}
+
+void Empregado::limparTelaFuncionarios()
+{
+
+#if defined(_WIN32) && !defined(DEBUG)
+    system("cls");
+#elif (defined(__LINUX__) || defined(__gnu_linux__) || defined(__linux__)) && !defined(DEBUG)
+    system("clear");
+#elif defined(__APPLE__) && !defined(DEBUG)
+    system("clear");
+#endif
 }

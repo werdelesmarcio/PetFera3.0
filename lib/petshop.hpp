@@ -1,4 +1,4 @@
-#pragma once;
+#pragma once
 
 #ifndef _PETSHOP_H_
 #define _PETSHOP_H_
@@ -19,8 +19,5 @@ public:
     void limparTela();
 
 };
-
-
-
 
 #endif

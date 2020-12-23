@@ -27,7 +27,7 @@ void Petshop::menu()
          << "   [2] - Cadastrar Funcionario.                      \n"
          << "   [3] - Alterar Cadastro de Funcionario.            \n"
          << "   [4] - Excluir Cadastro de Funcionario.            \n"
-         << "   [5] - Listar Funcionarios.            \n"
+         << "   [5] - Listar Funcionarios.                        \n"
          << "-----------------------------------------------------\n"
          << "   [0] - Cancelar o Cadastro.\n"
          << "Selecione a opcao: ";
@@ -55,9 +55,8 @@ void Petshop::menu()
             cin >> nome;
             this->empregados.excluirFuncionario(nome);
             break;
-
-
-                default : break;
+        default : 
+            break;
         }
     }
 }

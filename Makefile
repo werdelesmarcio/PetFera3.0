@@ -9,7 +9,7 @@ PROG = $(BIN)/PetFera
 CC = g++
 CPPFLAGS = -Wall -std=c++11 -I./lib
 
-OBJS = $(BIN)/main.o $(BIN)/funcionario.o $(BIN)/tratador.o $(BIN)/veterinario.o
+OBJS = $(BIN)/main.o $(BIN)/petshop.o $(BIN)/empregado.o $(BIN)/funcionario.o $(BIN)/tratador.o $(BIN)/veterinario.o
 
 all : $(OBJS)
 	$(CC) $(OBJS) -o $(PROG)
@@ -19,10 +19,19 @@ debug: clean all
 
 $(BIN)/main.o : $(SRC)/main.cpp
 	$(CC) $(CPPFLAGS) -c $(SRC)/main.cpp -o $@
+
 $(BIN)/funcionario.o : $(SRC)/funcionario.cpp $(INC)/funcionario.hpp 
 	$(CC) $(CPPFLAGS) -c $(SRC)/funcionario.cpp -o $@
+
+$(BIN)/empregado.o : $(SRC)/empregado.cpp $(INC)/empregado.hpp 
+	$(CC) $(CPPFLAGS) -c $(SRC)/empregado.cpp -o $@
+
+$(BIN)/petshop.o : $(SRC)/petshop.cpp $(INC)/petshop.hpp 
+	$(CC) $(CPPFLAGS) -c $(SRC)/petshop.cpp -o $@
+
 $(BIN)/tratador.o : $(SRC)/tratador.cpp $(INC)/tratador.hpp 
 	$(CC) $(CPPFLAGS) -c $(SRC)/tratador.cpp -o $@
+
 $(BIN)/veterinario.o : $(SRC)/veterinario.cpp $(INC)/veterinario.hpp 
 	$(CC) $(CPPFLAGS) -c $(SRC)/veterinario.cpp -o $@
 clean:

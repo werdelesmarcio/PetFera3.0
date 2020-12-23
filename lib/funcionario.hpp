@@ -4,10 +4,13 @@
 #define _FUNCIONARIO_H_
 
 #include <iostream>
-#include <map>
+#include <memory>
 #include <string>
 
 using std::string;
+using std::cout;
+using std::endl;
+using std::ostream;
 
 enum Cargo
 {
@@ -22,8 +25,7 @@ public:
 
 //----------------------------------------- Constructo
     Funcionario();
-    Funcionario(string codigo, Cargo funcao, string nome,
-                string cpf, string telefone, string email);
+    Funcionario(string codigo, string nome, string cpf, string telefone, string email);
 
 //----------------------------------------- Destrutor
     virtual ~Funcionario();
@@ -38,7 +40,6 @@ public:
 
 //----------------------------------------- Setters
     void setCodigo(string codigo_);
-    void setFuncao(Cargo funcao_);
     void setNome(string nome_);
     void setCpf(string cpf_);
     void setTelefone(string telefone_);
@@ -47,7 +48,7 @@ public:
 //----------------------------------------- Métodos internos
     int getAtivos() const;
 
-    friend std::ostream& operator<<(std::ostream &o, Funcionario const &f);
+    friend ostream& operator<<(ostream &o, Funcionario const &f);
 
 private:
     virtual ostream& print(ostream&) const = 0;

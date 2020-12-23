@@ -14,9 +14,10 @@
 Funcionario::Funcionario(){};
 
 //--------------------------------------------- Lista de parametros
-Funcionario::Funcionario(string codigo, Cargo funcao, string nome,
-                         string cpf, string telefone, string email) : codigo(codigo), funcao(funcao), nome(nome),
-                                                                      cpf(cpf), telefone(telefone), email(email) {}
+Funcionario::Funcionario(string codigo, string nome,
+                         string cpf, string telefone, string email) : 
+                         codigo(codigo), nome(nome),
+                         cpf(cpf), telefone(telefone), email(email) {}
 
 //--------------------------------------------- Chamada do Destrutor
 Funcionario::~Funcionario() {}
@@ -65,12 +66,6 @@ Funcionario::setCodigo(string codigo)
 }
 
 void 
-Funcionario::setFuncao(Cargo funcao)
-{
-    this->funcao = funcao;
-}
-
-void 
 Funcionario::setNome(string nome)
 {
     this->nome = nome;
@@ -95,7 +90,7 @@ Funcionario::setEmail(string email)
 }
 
 //--------------------------------------------- Módulo das Interfaces
-std::ostream &operator<<(std::ostream &impressao, Funcionario const &fun)
+ostream &operator<<(ostream &impressao, Funcionario const &fun)
 {
     return fun.print(impressao);
 }
@@ -105,39 +100,3 @@ Funcionario::getAtivos() const
 {
     return this->ativos;
 }
-
-//--------------------------------------------- Conversor para Enums
-/*std::ostream &operator<<(std::ostream &out, const Cargo value)
-{
-    static std::map<Cargo, string> nomeCargo;
-    if (nomeCargo.size() == 0)
-    {
-#define INSERT(p) nomeCargo[p] = #p
-        INSERT(tratador);
-        INSERT(veterinario);
-#undef INSERT
-    }
-    return out << nomeCargo[value];
-}
-
-
-std::ostream& operator<< (std::ostream &o, Funcionario const f){
-    o << f.nome << " - " << std::fixed << std::setprecision(2) << f.cpf << " - " << f.funcao;
-    return o;
-}
-
-bool
-Funcionario::operator==(const Funcionario& outro) const{
-    return this-> nome == outro.getNome();
-}
-
-Funcionario::Funcionario(const Funcionario &copia)
-{
-    this->codigo = copia.codigo;
-    this->funcao = copia.funcao;
-    this->nome = copia.nome;
-    this->cpf = copia.cpf;
-    this->telefone = copia.telefone;
-    this->email = copia.email;
-    ativos++;
-}*/
